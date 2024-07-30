@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First Project</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <header>
+      <p class="title">ToDo App</p>
+    </header>
+    <main>
+      <div class="handler-container">
+        <div class="add-task-input-block">
+          <p class="ati-title">Add new task</p>
+          <input
+            type="text"
+            id="at-input"
+            class="at-input"
+            placeholder="Task name..."
+          />
+          <p id="input-error-label" class="hidden">Empty input field</p>
+        </div>
+        <div class="add-task-buttons-block">
+          <button id="add-task-button" class="add-task-button">Add</button>
+          <button id="clear-task-input-button" class="clear-task-input-button">
+            Clear
+          </button>
+        </div>
+      </div>
+      <div class="tasks-list-container">
+        <p class="tasks-list-title">Your tasks</p>
+        <div id="tasks-list-grid" class="tasks-list-grid">
+          <!-- <div id="task-element" class="task-element">
+            <p class="task-name">Task name</p>
+            <div class="task-element-buttons">
+              <button class="task-complete-button">✓</button>
+              <button class="task-delete-button">x</button>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </main>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
