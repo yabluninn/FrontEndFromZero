@@ -13,7 +13,7 @@
     <main>
       <div class="handler-container">
         <div class="add-task-input-block">
-          <p class="ati-title">Add new task</p>
+          <p class="block-title">Add new task</p>
           <input
             type="text"
             id="at-input"
@@ -29,25 +29,36 @@
           </button>
         </div>
       </div>
-      <div class="tasks-list-container">
-        <div class="tasks-list-title">
-          <button style="scale: 0">Sort</button>
-          <p>Your tasks</p>
-          <button id="sort-inc-button" title="Incompleted first">
-            Sort INC
-          </button>
-          <button id="sort-c-button" title="Completed first">Sort C</button>
+      <section class="tasks-management">
+        <div class="tasks-control-container" style="scale: 0"></div>
+        <div class="tasks-list-container">
+          <div class="block-title">
+            <p>Your tasks</p>
+          </div>
+          <div id="tasks-list-grid" class="tasks-list-grid">
+            <!-- <div id="task-element" class="task-element">
+              <p class="task-name">Task name</p>
+              <div class="task-element-buttons">
+                <button class="task-complete-button">✓</button>
+                <button class="task-delete-button">x</button>
+              </div>
+            </div> -->
+          </div>
         </div>
-        <div id="tasks-list-grid" class="tasks-list-grid">
-          <!-- <div id="task-element" class="task-element">
-            <p class="task-name">Task name</p>
-            <div class="task-element-buttons">
-              <button class="task-complete-button">✓</button>
-              <button class="task-delete-button">x</button>
-            </div>
-          </div> -->
+        <div class="tasks-control-container">
+          <div class="block-title">
+            <p>Manage</p>
+          </div>
+          <div class="tc-buttons">
+            <button href="" class="sort-inc-button" id="sort-inc-button">
+              <img src="icons/sort-by-inc.svg" alt="" /> Incompleted first
+            </button>
+            <button href="" class="sort-c-button" id="sort-c-button">
+              <img src="icons/sort-by-c.svg" alt="" /> Completed first
+            </button>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
     <script src="scripts/script.js"></script>
   </body>

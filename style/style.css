@@ -189,20 +189,6 @@ main {
   align-items: center;
 }
 
-.ati-title {
-  font-size: 18px;
-  padding: 12px;
-  width: 100%;
-  text-align: center;
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(105, 105, 105);
-  background-color: rgb(238, 238, 238);
-  border-bottom: 1px solid rgb(189, 189, 189);
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
-
 .add-task-input-block input {
   font-size: 16px;
   padding: 15px;
@@ -257,7 +243,7 @@ main {
 
 .add-task-button {
   width: 340px;
-  background-color: rgb(2, 198, 44);
+  background-color: rgb(0, 117, 243);
   color: white;
   border: 0px;
 }
@@ -265,12 +251,16 @@ main {
 .clear-task-input-button {
   width: 130px;
   background-color: transparent;
-  color: red;
-  border: 2px solid;
+  color: rgb(0, 117, 243);
+  border: 1px solid;
+}
+
+.tasks-management {
+  display: flex;
+  margin-top: 20px;
 }
 
 .tasks-list-container {
-  margin-top: 20px;
   height: 400px;
   width: 500px;
   border: 1px solid rgb(189, 189, 189);
@@ -278,35 +268,22 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.tasks-list-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+.block-title {
   font-size: 18px;
-  padding: 6px;
+  padding: 12px;
+  width: 100%;
+  text-align: center;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(105, 105, 105);
-  text-align: center;
   background-color: rgb(238, 238, 238);
   border-bottom: 1px solid rgb(189, 189, 189);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-}
-
-.tasks-list-title button {
-  height: 35px;
-  width: 100px;
-  cursor: pointer;
-  border: 1px solid rgb(121, 183, 203);
-  border-radius: 8px;
-  background-color: rgb(210, 233, 255);
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(12, 86, 110);
 }
 
 .tasks-list-grid {
@@ -343,26 +320,38 @@ main {
 }
 
 .task-element-buttons button {
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
   font-size: 18px;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 8px;
-  border: 2px solid;
+  border: 1px solid;
   text-align: center;
 }
 
 .task-delete-button {
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px rgb(0, 117, 243) solid;
   background-color: transparent;
-  color: red;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: rgb(0, 117, 243);
   margin-left: 5px;
-  transform: scale(0.9, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .task-complete-button {
-  background-color: rgb(2, 198, 44);
+  background-color: rgb(0, 117, 243);
   color: white;
+}
+
+.task-complete-button img {
+  transform: scale(0.7);
 }
 
 .task-element-buttons button:hover {
@@ -376,5 +365,40 @@ main {
 }
 
 .task-complete-button.completed-button {
-  background-color: rgb(255, 191, 0);
+  background-color: rgb(140, 194, 253);
+}
+
+.tasks-control-container {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 500px;
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 8px;
+}
+
+.tc-buttons {
+  padding: 10px;
+}
+
+.tc-buttons button {
+  height: 35px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px rgb(0, 117, 243) solid;
+  background-color: transparent;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: rgb(0, 117, 243);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.tc-buttons button img {
+  margin-right: 15px;
 }

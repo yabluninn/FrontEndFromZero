@@ -95,10 +95,12 @@ function getTaskHTMLTemplate(task) {
       <div class="task-element-buttons">
         <button class="task-complete-button ${
           task.completed ? "completed-button" : ""
-        }" data-index="${task.id}" data-type="toggle">✓</button>
+        }" data-index="${task.id}" data-type="toggle"><img src="icons/${
+    task.completed ? "completed-icon.svg" : "complete-icon.svg"
+  }"></button>
         <button class="task-delete-button" data-index="${
           task.id
-        }" data-type="delete">x</button>
+        }" data-type="delete"><img src="icons/remove-icon.svg"></button>
       </div>
     </div>
   `;
@@ -113,13 +115,25 @@ function toggleTaskCompletion(index) {
     if (taskElement) {
       const taskName = taskElement.querySelector(".task-name");
       const completeButton = taskElement.querySelector(".task-complete-button");
+      const completeButtonImg = taskElement.querySelector(
+        ".task-complete-button img"
+      );
+
       if (taskName) {
         taskName.classList.toggle("completed-task");
       }
+
       if (completeButton) {
         completeButton.classList.toggle("completed-button");
       }
+
+      if (completeButtonImg) {
+        completeButtonImg.src = `icons/${
+          task.completed ? "completed-icon.svg" : "complete-icon.svg"
+        }`;
+      }
     }
+
     saveTasksToLocalStorage(tasks);
   }
 }
