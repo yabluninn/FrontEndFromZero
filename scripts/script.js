@@ -2,8 +2,15 @@ const taskTitleInputElement = document.getElementById("at-input");
 const addButton = document.getElementById("add-task-button");
 const clearInputButton = document.getElementById("clear-task-input-button");
 const tasksGrid = document.getElementById("tasks-list-grid");
+const sortIncompletedButton = document.getElementById("sort-inc-button");
+const sortCompletedButton = document.getElementById("sort-c-button");
 
 let tasks = [];
+
+const sortingType = {
+  COMPLETED_FIRST: "Completed first",
+  INCOMPLETED_FIRST: "Incompleted first",
+};
 
 function start() {
   tasks = loadTasks();
@@ -12,8 +19,6 @@ function start() {
     tasks.forEach((task) => {
       defaultRender(task);
     });
-  } else {
-    tasksGrid.insertAdjacentHTML("beforeend", "<p>Nothing here</p>");
   }
 }
 
@@ -50,6 +55,14 @@ addButton.onclick = function () {
 
   clearTaskInput();
   saveTasksToLocalStorage(tasks);
+};
+
+sortIncompletedButton.onclick = function () {
+  sortTasks(sortingType.INCOMPLETED_FIRST);
+};
+
+sortCompletedButton.onclick = function () {
+  sortTasks(sortingType.COMPLETED_FIRST);
 };
 
 tasksGrid.addEventListener("click", function (event) {
@@ -133,4 +146,22 @@ function saveTasksToLocalStorage(tasks) {
 function loadTasks() {
   const tasksJSON = localStorage.getItem("tasks");
   return tasksJSON ? JSON.parse(tasksJSON) : [];
+}
+
+function sortTasks(sortType) {
+  let incompletedTasks = tasks.filter((task) => task.completed == false);
+  let completedTasks = tasks.filter((task) => task.completed == true);
+
+  let sortedTasks = [];
+
+  if (sortType == sortingType.COMPLETED_FIRST) {
+    sortedTasks = completedTasks.concat(incompletedTasks);
+  } else if (sortType == sortingType.INCOMPLETED_FIRST) {
+    sortedTasks = incompletedTasks.concat(completedTasks);
+  }
+
+  tasksGrid.innerHTML = "";
+  sortedTasks.forEach((task) =>
+    tasksGrid.insertAdjacentHTML("beforeend", getTaskHTMLTemplate(task))
+  );
 }

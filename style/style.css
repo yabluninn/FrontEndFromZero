@@ -281,9 +281,12 @@ main {
 }
 
 .tasks-list-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   font-size: 18px;
-  padding: 12px;
+  padding: 6px;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(105, 105, 105);
@@ -292,6 +295,18 @@ main {
   border-bottom: 1px solid rgb(189, 189, 189);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+}
+
+.tasks-list-title button {
+  height: 35px;
+  width: 100px;
+  cursor: pointer;
+  border: 1px solid rgb(121, 183, 203);
+  border-radius: 8px;
+  background-color: rgb(210, 233, 255);
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(12, 86, 110);
 }
 
 .tasks-list-grid {

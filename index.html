@@ -30,7 +30,14 @@
         </div>
       </div>
       <div class="tasks-list-container">
-        <p class="tasks-list-title">Your tasks</p>
+        <div class="tasks-list-title">
+          <button style="scale: 0">Sort</button>
+          <p>Your tasks</p>
+          <button id="sort-inc-button" title="Incompleted first">
+            Sort INC
+          </button>
+          <button id="sort-c-button" title="Completed first">Sort C</button>
+        </div>
         <div id="tasks-list-grid" class="tasks-list-grid">
           <!-- <div id="task-element" class="task-element">
             <p class="task-name">Task name</p>
