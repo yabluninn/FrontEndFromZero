@@ -4,6 +4,7 @@ const clearInputButton = document.getElementById("clear-task-input-button");
 const tasksGrid = document.getElementById("tasks-list-grid");
 const sortIncompletedButton = document.getElementById("sort-inc-button");
 const sortCompletedButton = document.getElementById("sort-c-button");
+const deleteAllButton = document.getElementById("delete-all-button");
 
 let tasks = [];
 
@@ -63,6 +64,10 @@ sortIncompletedButton.onclick = function () {
 
 sortCompletedButton.onclick = function () {
   sortTasks(sortingType.COMPLETED_FIRST);
+};
+
+deleteAllButton.onclick = function () {
+  deleteAllTasks();
 };
 
 tasksGrid.addEventListener("click", function (event) {
@@ -151,6 +156,12 @@ function deleteTask(index) {
   );
 
   saveTasksToLocalStorage(tasks);
+}
+
+function deleteAllTasks() {
+  tasks = [];
+  saveTasksToLocalStorage(tasks);
+  tasksGrid.innerHTML = "";
 }
 
 function saveTasksToLocalStorage(tasks) {
